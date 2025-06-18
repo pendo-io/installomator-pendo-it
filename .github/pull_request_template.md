@@ -2,4 +2,4 @@
 
 **Check Installomator Github Pull Requests for updated label**
 
-Submit Label below:
+**Submit Label below:**
