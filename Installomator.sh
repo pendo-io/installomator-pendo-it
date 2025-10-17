@@ -9428,6 +9428,12 @@ superhuman)
     appNewVersion=$(curl -fs "https://storage.googleapis.com/download.superhuman.com/supertron-update/latest-mac.yml" | head -1 | cut -d " " -f2)
     expectedTeamID="6XHFYUTQGX"
     ;;
+superwhisper)
+    name="superwhisper"
+    type="dmg"
+    downloadURL="https://builds.superwhisper.com/latest/superwhisper.dmg"
+    expectedTeamID="XDP69BYUP9"
+    ;;
 supportapp)
     name="Support"
     type="pkg"
