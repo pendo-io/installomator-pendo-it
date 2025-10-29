@@ -9025,9 +9025,11 @@ snagit|\
 snagit2025)
 	name="Snagit"
 	type="dmg"
-	sparkleData=$(curl -fsL 'https://sparkle.cloud.techsmith.com/api/v1/AppcastManifest/?version=2025.0.0&utm_source=product&utm_medium=snagit&utm_campaign=sm2025&ipc_item_name=snagit&ipc_platform=macos')
-	appNewVersion=$( <<<"$sparkleData" xpath 'string(//item[last()]/sparkle:shortVersionString)' )
-	downloadURL=$( <<<"$sparkleData" xpath 'string(//item[last()]/enclosure/@url)' )
+    api_results_1=$(curl -fsL -H "Accept: application/xml" 'https://www.techsmith.com/api/v/1/products/getallversions/100' )
+    versionID=$(<<< $api_results_1 xpath 'string(//ProductsVersionInformationModel[Major = 25]/VersionID)')
+    api_results_2=$(curl -fsL -H "Accept: application/xml" "https://www.techsmith.com/api/v/1/products/getversioninfo/$versionID" )
+    downloadURL="https://download.techsmith.com"$(<<< $api_results_2 xpath 'string(//RelativePath)')$(<<< $api_results_2 xpath 'string(//Name)')
+    appNewVersion=20$(<<< $api_results_2 xpath 'string(//Major)').$(<<< $api_results_2 xpath 'string(//Minor)').$(<<< $api_results_2 xpath 'string(//Maintenance)')
 	expectedTeamID="7TQL462TU8"
 	;;
 snagit2019)
