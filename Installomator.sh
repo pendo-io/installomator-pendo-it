@@ -2979,6 +2979,12 @@ chatgpt)
     appNewVersion="$(curl -fs "https://persistent.oaistatic.com/sidekick/public/sparkle_public_appcast.xml" | xpath '(//rss/channel/item/title)[1]/text()' 2>/dev/null)"
     expectedTeamID="2DC432GLL2"
     ;;
+chatgptatlas)
+    name="ChatGPT Atlas"
+    type="dmg"
+    downloadURL="https://persistent.oaistatic.com/atlas/public/ChatGPT_Atlas.dmg"
+    expectedTeamID="2DC432GLL2"
+    ;;
 chatwork)
      name="Chatwork"
      type="dmg"
