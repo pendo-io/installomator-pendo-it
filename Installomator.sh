@@ -350,7 +350,7 @@ if [[ $(/usr/bin/arch) == "arm64" ]]; then
 fi
 VERSION="10.9beta"
 VERSIONDATE="2025-06-15"
-PENDO_VERSION="1.0.0"
+PENDO_VERSION="1.0.1"
 
 # MARK: Functions
 
@@ -8323,6 +8323,12 @@ qlab)
     appNewVersion=$(curl -fs "https://qlab.app/appcast/v5/" | xpath 'string(//rss/channel[1]/item/enclosure/@sparkle:shortVersionString)')
     expectedTeamID="7672N4CCJM"
     ;;
+qualified)
+	name="Qualified"
+    type="dmg"
+    downloadURL="https://app.qualified.com/download/mac"
+    expectedTeamID="X4K33UUA44"
+    ;; 
 r)
     name="R"
     type="pkg"
