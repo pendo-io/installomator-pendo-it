@@ -349,8 +349,8 @@ if [[ $(/usr/bin/arch) == "arm64" ]]; then
     fi
 fi
 VERSION="10.9beta"
-VERSIONDATE="2026-05-06"
-PENDO_VERSION="1.0.2"
+VERSIONDATE="2026-05-07"
+PENDO_VERSION="1.0.3"
 
 # MARK: Functions
 
